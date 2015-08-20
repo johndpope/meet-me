@@ -16,6 +16,7 @@
 		D3ACF4A21B859DC20035CF6C /* meet_meTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACF4A11B859DC20035CF6C /* meet_meTests.swift */; };
 		D3ACF4AD1B859DC20035CF6C /* meet_meUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ACF4AC1B859DC20035CF6C /* meet_meUITests.swift */; };
 		D3ACF4BF1B85A4C80035CF6C /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3ACF4BD1B85A4C80035CF6C /* Events.storyboard */; };
+		D3ACF4C21B85A89C0035CF6C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3ACF4C11B85A89C0035CF6C /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		D3ACF4AC1B859DC20035CF6C /* meet_meUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = meet_meUITests.swift; sourceTree = "<group>"; };
 		D3ACF4AE1B859DC20035CF6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3ACF4BE1B85A4C80035CF6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
+		D3ACF4C01B85A88B0035CF6C /* meet me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "meet me.entitlements"; sourceTree = "<group>"; };
+		D3ACF4C11B85A89C0035CF6C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3ACF4C21B85A89C0035CF6C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 		D3ACF47E1B859DC20035CF6C = {
 			isa = PBXGroup;
 			children = (
+				D3ACF4C31B85A8EF0035CF6C /* Frameworks */,
 				D3ACF4891B859DC20035CF6C /* meet me */,
 				D3ACF4A01B859DC20035CF6C /* meet meTests */,
 				D3ACF4AB1B859DC20035CF6C /* meet meUITests */,
@@ -101,6 +106,7 @@
 		D3ACF4891B859DC20035CF6C /* meet me */ = {
 			isa = PBXGroup;
 			children = (
+				D3ACF4C01B85A88B0035CF6C /* meet me.entitlements */,
 				D3ACF48A1B859DC20035CF6C /* AppDelegate.swift */,
 				D3ACF48C1B859DC20035CF6C /* FirstViewController.swift */,
 				D3ACF48E1B859DC20035CF6C /* SecondViewController.swift */,
@@ -129,6 +135,14 @@
 				D3ACF4AE1B859DC20035CF6C /* Info.plist */,
 			);
 			path = "meet meUITests";
+			sourceTree = "<group>";
+		};
+		D3ACF4C31B85A8EF0035CF6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3ACF4C11B85A89C0035CF6C /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +212,15 @@
 				TargetAttributes = {
 					D3ACF4861B859DC20035CF6C = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 4XYHU4CDAH;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					D3ACF49C1B859DC20035CF6C = {
 						CreatedOnToolsVersion = 7.0;
@@ -412,10 +435,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "meet me/meet me.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "meet me/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "by.orangesoft.meet-me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -423,10 +450,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "meet me/meet me.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "meet me/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "by.orangesoft.meet-me";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
